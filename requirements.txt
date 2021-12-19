@@ -1,6 +1,10 @@
+joblib==1.1.0
 numpy==1.21.4
 PyYAML==6.0
+scikit-learn==1.0.1
+scipy==1.7.3
 six==1.16.0
+threadpoolctl==3.0.0
 torch==1.10.1
 tqdm==4.62.3
 typing-extensions==4.0.1
