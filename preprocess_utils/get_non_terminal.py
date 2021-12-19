@@ -52,7 +52,8 @@ def process(filename):
 
             # expand the ID into the range of 4*base_ID,
             # according to whether it has sibling or children.
-            # Sibling information is got by the ancestor's children information
+            # Sibling information is got by the ancestor's
+            # children information
             if 'children' in dic.keys():
                     if has_sibling[i]:
                         ID = base_ID * 4 + 3
@@ -74,7 +75,7 @@ def process(filename):
                     ID = base_ID * 4 + 1
                 else:
                     ID = base_ID * 4
-            #recording the N which has non-empty T
+            # recording the N which has non-empty T
             if 'value' in dic.keys():
                 no_empty_set.add(ID)
 
