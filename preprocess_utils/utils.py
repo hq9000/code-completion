@@ -62,7 +62,17 @@ def input_data(N_filename, T_filename):
         print ('the number of test data is %d' %(len(test_dataT)))
         print ('Finish reading data and take %.2f\n'%(time.time()-start_time))
 
-    return train_dataN, test_dataN, vocab_sizeN, train_dataT, test_dataT, vocab_sizeT, attn_size, train_dataP, test_dataP
+    return (
+       train_dataN,
+       test_dataN,
+       vocab_sizeN,
+       train_dataT,
+       test_dataT,
+       vocab_sizeT,
+       attn_size,
+       train_dataP,
+       test_dataP
+    )
 
 
 def save(filename, terminal_dict, terminal_num, vocab_size, sorted_freq_dict):

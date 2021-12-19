@@ -34,10 +34,25 @@ class MainDataset(torch.utils.data.Dataset):
             is_train=False,
             truncate_size=150
         ):
+        """
+        T stands for "terminals", apparently;
+        N seems to stand for "non-terminals"
+        P is for pointer?
+        """
         super(MainDataset).__init__()
-        train_dataN, test_dataN, vocab_sizeN, train_dataT, test_dataT, vocab_sizeT, attn_size, train_dataP, test_dataP = input_data(
-    N_filename, T_filename
-)
+        (
+            train_dataN,
+            test_dataN,
+            vocab_sizeN,
+            train_dataT,
+            test_dataT,
+            vocab_sizeT,
+            attn_size,
+            train_dataP,
+            test_dataP
+         ) = input_data(
+            N_filename, T_filename
+        )
         self.is_train = is_train
         if self.is_train:
             self.data = [item for item in data_gen(zip(tqdm(train_dataN), train_dataT, train_dataP), truncate_size)]
