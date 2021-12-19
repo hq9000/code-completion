@@ -82,8 +82,10 @@ def process(filename, terminal_dict, unk_id, attn_size, verbose=False, is_train=
                 float(attn_success_total)/length_total, float(attn_total)/length_total))
     with open('output.txt', 'a') as fout:
       fout.write('Statistics: attn_success_total: %d, attn_fail_total: %d, success/fail: %.4f, length_total: %d, attn_success percentage: %.4f, total unk percentage: %.4f\n'%
-                (attn_success_total, attn_fail_total, float(attn_success_total)/attn_fail_total, length_total,
-                float(attn_success_total)/length_total, float(attn_success_total + attn_fail_total)/length_total))
+                (attn_success_total, attn_fail_total,
+                 float(attn_success_total) / attn_fail_total if attn_fail_total > 0 else 0,
+                 length_total,
+                 float(attn_success_total)/length_total, float(attn_success_total + attn_fail_total)/length_total))
 
     return terminal_corpus
 
