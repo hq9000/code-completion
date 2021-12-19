@@ -50,7 +50,9 @@ def process(filename):
                 base_ID = numType
                 numType = numType + 1
 
-            #expand the ID into the range of 4*base_ID, according to whether it has sibling or children. Sibling information is got by the ancestor's children information
+            # expand the ID into the range of 4*base_ID,
+            # according to whether it has sibling or children.
+            # Sibling information is got by the ancestor's children information
             if 'children' in dic.keys():
                     if has_sibling[i]:
                         ID = base_ID * 4 + 3
@@ -59,6 +61,9 @@ def process(filename):
 
                     childs = dic['children']
                     for j in childs:
+                        # parent_counter seems to be keeping
+                        # track of the "distance" of the j-th node
+                        # to its parent (that comes before)
                         parent_counter[j] = j-i
 
                     if len(childs) > 1:

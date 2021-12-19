@@ -9,3 +9,5 @@ checkpoints
 logs
 *.out
 venv
+json_data
+pickle_data
