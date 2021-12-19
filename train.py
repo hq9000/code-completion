@@ -16,6 +16,9 @@ def train(config):
 
     device = config.train.device
 
+    if not torch.cuda.is_available():
+        device = 'cpu'
+
     data_train = MainDataset(
         N_filename = config.data.N_filename,
         T_filename = config.data.T_filename,
