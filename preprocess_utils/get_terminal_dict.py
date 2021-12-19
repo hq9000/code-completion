@@ -26,7 +26,7 @@ def get_terminal_dict(vocab_size, freq_dict, verbose=False):
   terminal_dict = dict()
   sorted_freq_dict = sorted(freq_dict.items(), key=operator.itemgetter(1), reverse=True)
   if verbose == True:
-    for i in range(100):
+    for i in range(min(100, len(sorted_freq_dict))):
       print ('the %d frequent terminal: %s, its frequency: %.5f'%(i, sorted_freq_dict[i][0], float(sorted_freq_dict[i][1])/total_length))
   new_freq_dict = sorted_freq_dict[:vocab_size]
   for i, (terminal, frequent) in enumerate(new_freq_dict):
